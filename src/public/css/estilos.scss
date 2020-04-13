@@ -3,7 +3,8 @@ body{
     padding: 0;
     box-sizing: border-box;
     overflow: hidden;
-    font-size: 16px;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
    // max-height: 1024;
    // max-width: 667px;
    // width: 100%;
@@ -15,7 +16,7 @@ body{
         display: grid;
         grid-template-columns: repeat(12,1fr);
         grid-template-rows: repeat(12,1fr);
-        grid-template-areas: "header header header header header header header header header header header header"
+        grid-template-areas: "header-logo header-logo header header header header header header header header header header"
                              "menu-aside menu-aside contenido-info contenido-info contenido-info contenido-info contenido-info contenido-info contenido-info contenido-info contenido-info contenido-info"
                              "menu-aside menu-aside contenido-info contenido-info contenido-info contenido-info contenido-info contenido-info contenido-info contenido-info contenido-info contenido-info"
                              "menu-aside menu-aside contenido-info contenido-info contenido-info contenido-info contenido-info contenido-info contenido-info contenido-info contenido-info contenido-info"
@@ -28,25 +29,22 @@ body{
                              "menu-aside menu-aside contenido-info contenido-info contenido-info contenido-info contenido-info contenido-info contenido-info contenido-info contenido-info contenido-info"
                              "menu-aside menu-aside contenido-info contenido-info contenido-info contenido-info contenido-info contenido-info contenido-info contenido-info contenido-info contenido-info";
 
+        .header-logo{
+            color: white;
+            background-color:rgb(15, 129, 124);
+            grid-area:header-logo;;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }                     
         .header-nav{
             grid-area: header;
-            display: flex;
-            justify-content: space-between;
-            .header-logo{
-                color: white;
-                background-color:rgb(15, 129, 124);
-                flex-basis: 16.69%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-            }
             .header-info{
-                color: rgba(0,0,0,.5);
+                color: rgba(0,0,0,.8);
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                flex-basis: 83.31%;
+                width :100%;
                 display: flex;
                 justify-content: space-between;
                 padding-top: 1em;
@@ -83,9 +81,51 @@ body{
 
         }
         .menu-aside{
+            padding-top:2em;
             background-color: #204051;
             grid-area: menu-aside;
             color: white;
+            display: flex;
+            width: 100%;
+            nav{
+                width: 100%;
+                .menu-head{
+                    width: 100%;
+                    text-align: center;
+                    margin-bottom: 2em;
+                    span{
+                        border-bottom: solid 2px rgba(255,255,255,0.5);
+                    }
+                    
+
+                }
+                ul{
+                    margin: 0;
+                    padding: 0;
+                    li{
+                        list-style: none;
+                        margin: 0;
+                        padding: 0;
+                       
+                        a{
+                            &:hover{
+                                background-color: red;
+                            }
+                            display: block;
+                            color: white;
+                            text-decoration: none;
+                            margin-top: 1.5px;
+                            text-align: center;
+                            padding-top: 0.5em;
+                            padding-bottom: 0.5em;
+                            
+                            
+                        }
+                       
+                    }
+                }
+            }
+
           
 
         }
